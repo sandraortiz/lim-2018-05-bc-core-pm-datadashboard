@@ -1,5 +1,6 @@
 # Data Dashboard
 
+
 ## Preámbulo
 
 En Laboratoria, las Training Managers (TMs) hacen un gran trabajo al analizar la
@@ -559,3 +560,7 @@ del repo de tu cohort, tus _coaches_ te compartirán un _link_ a un repo. La otr
 * [Fetch API en MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 * [json.org](https://json.org/json-es.html)
 * [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=en)
+
+## Elaborado por:
+
+Sandra Ortiz y Evelyn Meniz
