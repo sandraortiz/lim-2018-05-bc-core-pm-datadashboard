@@ -1,6 +1,5 @@
 #  Laboratoria progress
 
-  
   Es una interfaz que permite a las Training Managers (TMs)  visualizar el progreso de las alumnas de Laboratoria.
 
 ## Preámbulo
@@ -27,20 +26,28 @@ estudiante en su proceso de aprendizaje.
 
 ##  Proceso de creacion de Laboratoria progress.
 
- Decidimos realizar una encuesta a las Training Managers (TMs)  para tener  la informacion necesario sobre lo que desean o no tener en esta interfaz.
+ Decidimos realizar una encuesta a las Training Managers (TMs)  para tener  la informacion necesario sobre lo que necesitan en la  interfaz.
 
-  ![captura](https://user-images.githubusercontent.com/34012605/41383780-08a8c156-6f38-11e8-9cef-1bf603a48f28.PNG)
+  https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
+
+Usuario 1
+
+(documentacion/Encuesta/Captura(1).png)
+
+Usuario 2
+
+(documentacion/Encuesta/Captura(2).png)
 
 
 Luego procedemos a realizar el sketch del producto .
 
-![documento_2](https://user-images.githubusercontent.com/34012605/41383894-8dc90166-6f38-11e8-9770-1313b4334217.jpg)
+(documentacion/sketch)
 
 
 
 Luego realizamos un prototipo 
 
-https://marvelapp.com/dd994i9/screen/44141465
+
 
  
 ## Elaborado por:
