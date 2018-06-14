@@ -26,9 +26,10 @@ estudiante en su proceso de aprendizaje.
 
 ##  Proceso de creacion de Laboratoria progress.
 
- Decidimos realizar una encuesta a las Training Managers (TMs)  para tener  la informacion necesario sobre lo que necesitan en la  interfaz.
+#Encuesta
 
-  https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
+Decidimos realizar una encuesta a las Training Managers (TMs)  para tener  la informacion necesario sobre lo que necesitan en la  interfaz.
+https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
 
 Usuario 1
 
@@ -38,14 +39,33 @@ Usuario 2
 
 ![usuario2](documentacion/Encuesta/usuario2.PNG)
 
+#Sketch
 
-Luego procedemos a realizar el sketch del producto .
+Luego procedemos a realizar el sketch del producto con la cual hicimos entrevita 
+
+![sketch1](documentacion/sketch/sketch1.jpg)
+
+![entrevista](documentacion/entrevista/entrevista.PNG)
+
+Realizamos otro sketch . 
+
+![sketch2](documentacion/sketch/sketch2.jpg)
 
 
+#Diagrama de flujo 
+
+![diagramadeflujo](documentacion/Diagramadeflujo/diagramadeflujo.png)
 
 
+#Prototipo
 
 Luego realizamos un prototipo 
+
+![1](documentacion/prototipoimagenes/1.png)
+
+
+https://marvelapp.com/dd994i9 
+
 
 
 
