@@ -32,11 +32,11 @@ estudiante en su proceso de aprendizaje.
 
 Usuario 1
 
-![documentacion](documentacion/Encuesta/Captura(1).PNG)
+![Captura(1)](documentacion/Encuesta/Captura(1).PNG)
 
 Usuario 2
 
-![documentacion](documentacion/Encuesta/Captura(2).PNG)
+![Captura(2)](documentacion/Encuesta/Captura(2).PNG)
 
 
 Luego procedemos a realizar el sketch del producto .
