@@ -26,7 +26,7 @@ estudiante en su proceso de aprendizaje.
 
 ##  Proceso de creacion de Laboratoria progress.
 
-#Encuesta
+## Encuesta
 
 Decidimos realizar una encuesta a las Training Managers (TMs)  para tener  la informacion necesario sobre lo que necesitan en la  interfaz.
 https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2
@@ -39,7 +39,7 @@ Usuario 2
 
 ![usuario2](documentacion/Encuesta/usuario2.PNG)
 
-#Sketch
+## Sketch
 
 Luego procedemos a realizar el sketch del producto con la cual hicimos entrevita 
 
@@ -52,12 +52,12 @@ Realizamos otro sketch .
 ![sketch2](documentacion/sketch/sketch2.jpg)
 
 
-#Diagrama de flujo 
+## Diagrama de flujo 
 
 ![diagramadeflujo](documentacion/Diagramadeflujo/diagramadeflujo.png)
 
 
-#Prototipo
+## Prototipo
 
 Luego realizamos un prototipo 
 
