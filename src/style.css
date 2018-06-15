@@ -4,9 +4,10 @@ header {
     height: 60px;
 }
 body{
-    background: url(../images/woman_tech.jpg);
+    background-color: #969FAA;
+    /* background: url(../images/woman_tech.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 h1{
     color: #FFE50E;
@@ -38,8 +39,37 @@ form h1{
 }
 
 #start{
+
     display: none;
 }
+
+input{
+	color: #000000;
+	background: #ffffff;
+    font: 1em;
+    box-sizing: border-box;
+	border: none;
+	border-radius: 5px;
+	display: block;
+	margin: 9px auto 0 auto;
+	padding: 5px;
+}
+
+button{
+    border: none;
+    padding: 15px 32px;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+    background:#FFE50E;
+   
+    
+ }
+
+
+
+
 /*
 #969FAA;
 
