@@ -1,17 +1,15 @@
 header {
     display: flex;
     background: #313533;
-    height: 120px;
+    height: 50px;
+    padding: 40px;
 
 }
 body{
-    background-color: #969FAA;
+    background-color: #c4c5c6;
     /* background: url(../images/woman_tech.jpg);
     background-size: cover;
-    background-repeat: no-repeat; */
-}
-h1{
-    color: #FFE50E;
+    background-repeat: no-repeat; */  
 }
 form{
     width: 360px;
@@ -22,11 +20,17 @@ form h1{
     text-align: center;
     font-family: "Varela Round";
     font-size: 50px;
+    color: #FFE50E;
 }
 
 #start{
-
+    margin: 100px;
+    padding: 90px;
     display: none;
+}
+.preadmision{
+    margin: 9px auto 0 auto;
+    padding: 60px;
 }
 
 input{
@@ -44,20 +48,15 @@ input{
 form button{
     border: none;
     padding: 15px 32px;
-     display: inline-block;
-     font-size: 16px;
-     margin: 4px 2px;
-     cursor: pointer;
-    background:#FFE50E;  
-}
-preadmision{
-    border: none;
-    padding: 15px 32px;
+    display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    background: none;
-   
+    background:#FFE50E;  
+}
+#start button{
+    font-size: 16px;
+    cursor: pointer;
 }
 h2{
     font-family: "Varela Round";
