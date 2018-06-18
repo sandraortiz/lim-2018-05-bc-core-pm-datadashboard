@@ -1,5 +1,7 @@
 
-fetch('../data/cohorts.json')
+
+
+fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
 .then(response => response.json())
 .then(json => {
   const cohort = json;
@@ -7,33 +9,13 @@ fetch('../data/cohorts.json')
   
   for (let i = 0; i < cohort.length; i++) {
     const options = document.createElement('option');
-    const contentoption = document.createTextNode(cohort[i].id);
+    const contentoption = document.createTextNode(cohort[i].name);
    options.appendChild(contentoption);
-   console.log(cohort[i].id);
+   console.log(cohort[i].name);
      select.appendChild(options);
      
     }
 })
 .catch((err) => {
 console.error(err);
-});
-
-fetch(url1).then((response)=>{
-  if(response.status == 200){
-      return response.json();
-  }else{
-      throw new Error("La llamada a la API falló");
-  }
-}).then((jsonData)=>{
-  return fetch(jsonData.url); //Supongamos que obtenemos otra url de los datos
-}).then((response)=>{
-  if(response.status == 200){
-      return response.json();
-  }else{
-      throw new Error("La segunda llamada a la API falló");
-  }
-}).then((jsonData)=>{
-  //Código que procesa los datos de la segunda llamada
-}).catch((error)=>{
-  //Código que se ejecuta en caso de **cualquier** error
 });

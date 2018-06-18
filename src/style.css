@@ -29,7 +29,9 @@ h1{
     font-family: "Varela Round";
     font-size: 50px;
 }
-
+#studentspage{
+    display: none;
+}
 
 #start{
 
