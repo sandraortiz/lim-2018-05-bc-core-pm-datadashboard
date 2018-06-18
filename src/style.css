@@ -1,8 +1,15 @@
-header {
-    display: flex;
-    background: #313533;
-    height: 60px;
+header{ 
+     background: #313533;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	-o-transition: all 200ms ease;
+	transition: all 200ms ease;
 }
+
+
 body{
     background-color: #969FAA;
     /* background: url(../images/woman_tech.jpg);
@@ -12,31 +19,17 @@ body{
 h1{
     color: #FFE50E;
 }
-form{
+#welcomepage{
     width: 360px;
     border-radius: 3px;
     margin: 200px auto;
 }
-form h1{
+#welcomepage h1{
     text-align: center;
     font-family: "Varela Round";
     font-size: 50px;
 }
-.buttonsImg1{
-   float: left;
-    padding: 5%;
-    width: 50%;
-}
-.buttonsImg2{
-    float: left;
-    padding: 5%;
-    width: 50%;
-}
-.buttonsImg3{
-    float: left;
-    padding: 5%;
-    width: 50%;
-}
+
 
 #start{
 
