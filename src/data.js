@@ -1,6 +1,18 @@
 
+const computeUsersStats = (users, progress, courses) => {
 
+}
+const sortUsers =()=>{
 
+}
+const filterUsers=()=>{
+
+}
+const processCohortData = ( )=>{
+  
+}
+
+users= [ ]
 fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
 .then(response => response.json())
 .then(json => {
