@@ -1,67 +1,66 @@
-header {
-    display: flex;
+header{ 
     background: #313533;
-    height: 50px;
-    padding: 40px;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 100;
+   -o-transition: all 200ms ease;
+   transition: all 200ms ease;
+}
 
-}
+
 body{
-    background-color: #c4c5c6;
-    /* background: url(../images/woman_tech.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */  
+   background-color: #969FAA;
+   /* background: url(../images/woman_tech.jpg);
+   background-size: cover;
+   background-repeat: no-repeat; */
 }
-form{
-    width: 360px;
-    border-radius: 3px;
-    margin: 200px auto;
+h1{
+   color: #FFE50E;
 }
-form h1{
-    text-align: center;
-    font-family: "Varela Round";
-    font-size: 50px;
-    color: #FFE50E;
+#welcomepage{
+   width: 360px;
+   border-radius: 3px;
+   margin: 200px auto;
+}
+#welcomepage h1{
+   text-align: center;
+   font-family: "Varela Round";
+   font-size: 50px;
+}
+#studentspage{
+   display: none;
 }
 
 #start{
-    margin: 100px;
-    padding: 90px;
-    display: none;
-}
-.preadmision{
-    margin: 9px auto 0 auto;
-    padding: 60px;
+
+   display: none;
 }
 
 input{
-	color: #000000;
-	background: #ffffff;
-    font: 1em;
-    box-sizing: border-box;
-	border: none;
-	border-radius: 5px;
-	display: block;
-	margin: 9px auto 0 auto;
-	padding: 5px;
+   color: #000000;
+   background: #ffffff;
+   font: 1em;
+   box-sizing: border-box;
+   border: none;
+   border-radius: 5px;
+   display: block;
+   margin: 9px auto 0 auto;
+   padding: 5px;
 }
 
-form button{
-    border: none;
-    padding: 15px 32px;
+button{
+   border: none;
+   padding: 15px 32px;
     display: inline-block;
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    background:#FFE50E;  
+   background:#FFE50E;
+  
+   
 }
-#start button{
-    font-size: 16px;
-    cursor: pointer;
-}
-h2{
-    font-family: "Varela Round";
-}
-
 
 
 /*
