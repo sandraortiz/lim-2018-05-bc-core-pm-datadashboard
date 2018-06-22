@@ -1,3 +1,22 @@
+const buttonWelcome = document.getElementById("buttonhome");
+const laboratoriapage=document.getElementById("start");
+const welcomePage=document.getElementById("welcomepage");
+const buttonpreadmisio=document.getElementById("students")
+const studentsPge=document.getElementById("studentspage")
+buttonWelcome.addEventListener('click', ()=>{
+    laboratoriapage.style.display="block";
+    welcomePage.style.display="none";
+})
+buttonpreadmisio.addEventListener('click',()=>{
+    studentsPge.style.display="block";
+    laboratoriapage.style.display="none";
+})
+const select = document.getElementById('cohort');
+const students = document.getElementById('user');
+
+
+
+
 fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
 .then(function(response) {
   if(response.ok) {
@@ -27,23 +46,6 @@ const resul = resuls [i];
 
 }
 
-
-
-const buttonWelcome = document.getElementById("buttonhome");
-const laboratoriapage=document.getElementById("start");
-const welcomePage=document.getElementById("welcomepage");
-const buttonpreadmisio=document.getElementById("students")
-const studentsPge=document.getElementById("studentspage")
-buttonWelcome.addEventListener('click', ()=>{
-    laboratoriapage.style.display="block";
-    welcomePage.style.display="none";
-})
-buttonpreadmisio.addEventListener('click',()=>{
-    studentsPge.style.display="block";
-    laboratoriapage.style.display="none";
-})
-const select = document.getElementById('cohort');
-const students = document.getElementById('user');
 
 
   
