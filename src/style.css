@@ -1,70 +1,54 @@
 header{ 
-     background: #313533;
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 100;
-	-o-transition: all 200ms ease;
-	transition: all 200ms ease;
+    background: #313533;
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 100;
+   -o-transition: all 200ms ease;
+   transition: all 200ms ease;
 }
-
-
 body{
-    background-color: #969FAA;
-    /* background: url(../images/woman_tech.jpg);
-    background-size: cover;
-    background-repeat: no-repeat; */
+    background-image:  url(../images/woman_tech.jpg);
+    background-repeat:no-repeat;
+    
+} 
+
+.image {
+    float: left;  
+    padding: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 h1{
-    color: #FFE50E;
+   color: #FFE50E;
 }
-#welcomepage{
-    width: 360px;
-    border-radius: 3px;
-    margin: 200px auto;
+#welcome-page{
+   width: 360px;
+   border-radius: 3px;
+   margin: 200px auto;
 }
-#welcomepage h1{
-    text-align: center;
-    font-family: "Varela Round";
-    font-size: 50px;
+#welcome-page h1{
+   text-align: center;
+   font-family: "Varela Round";
+   font-size: 50px;
+  
 }
-#studentspage{
+#menu-page{
+   display: none;
+   
+}
+#students-page{
     display: none;
-}
-
-#start{
-
-    display: none;
-}
-
-input{
-	color: #000000;
-	background: #ffffff;
-    font: 1em;
-    box-sizing: border-box;
-	border: none;
-	border-radius: 5px;
-	display: block;
-	margin: 9px auto 0 auto;
-	padding: 5px;
 }
 
 button{
-    border: none;
-    padding: 15px 32px;
-     display: inline-block;
-     font-size: 16px;
-     margin: 4px 2px;
-     cursor: pointer;
-    background:#FFE50E;
-   
-    
- }
-
-
-
-
-/*
-#969FAA;
-
+   border: none;
+   padding: 15px 32px;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+ 
+}
