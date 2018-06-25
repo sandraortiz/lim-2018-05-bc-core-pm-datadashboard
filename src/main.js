@@ -3,6 +3,7 @@ const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const studentsPage = document.getElementById('students-page');
 const buttonStudents =document.getElementById('button-students');
+const students = document.getElementById('user');
 buttonHome.addEventListener('click',() => {
   menuPage.style.display='block';
   welcomePage.style.display='none';
@@ -16,6 +17,8 @@ buttonStudents.addEventListener('click',()=>{
 const datafile1 = '../data/cohorts.json'
 const datafile2 = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
 const datafile3 = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+
+  
 const llamadas = [];
 let cohorts = [];
 let progress = [];
@@ -34,8 +37,10 @@ Promise.all(llamadas)
 .then(
   response => {
     cohorts = JSON.parse(response[0]);
-    progress = JSON.parse(response[1]);
-    users = JSON.parse(response[2]);
+   users  = JSON.parse(response[1]);
+    progress = JSON.parse(response[2]);
+    user(users);
   }
-);
-
+   );
+    
+  
