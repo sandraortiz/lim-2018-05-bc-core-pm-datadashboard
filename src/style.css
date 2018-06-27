@@ -35,11 +35,14 @@ h1{
    font-size: 50px;
   
 }
+#head {
+    display: none;
+}
 #menu-page{
    display: none;
    
 }
-#students-page{
+#cohorts-page{
     display: none;
 }
 
