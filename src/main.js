@@ -3,8 +3,9 @@ const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const cohortsPage = document.getElementById('cohorts-page');
 const buttonCohorts =document.getElementById('button-cohorts');
-const students = document.getElementById('user');
+const students = document.getElementById('countries');
 const head = document.getElementById('head')
+const sedesSelect = document.getElementById('cohor');
 buttonHome.addEventListener('click',() => {
   menuPage.style.display='block';
   welcomePage.style.display='none';
@@ -36,26 +37,21 @@ Promise.all(llamadas)
  )
 .then(
   response => {
-    cohorts= (JSON.parse(response[0]));
-   users  = JSON.parse(response[1]);
-    progress = JSON.parse(response[2]);
-
+    cohorts= JSON.parse(response[0])
+   users  = JSON.parse(response[1])
+    progress = JSON.parse(response[2])
+sedespo();
   }
    );
-  
-   const cohorts = ['lim-2018' , 'lim-2017' , 'aqp-2017' , 'gdl-2018'];
-const sedesSelect = document.getElementById("sedes");
-
-const populateSedesSelect = () => {
-const sedesUnicas=[];
-    cohorts.forEach(cohort=> {
-  const sede = cohort.split('-', 1)[0];
-  console.log(sede);
-  if(sedesUnicas.indexOf(sede) < 0) {
-      sedesUnicas.push(sede);
-  }
-});
-
+                
+const sedespo = () => {
+for (let i = 0; i < cohorts.length; i++) {
+    const options = document.createElement('option');
+    const contentoption = document.createTextNode(cohorts[i].id);
+   options.appendChild(contentoption);
+   console.log(cohorts[i].id);
+     cohor.appendChild(options);
+     } 
 }
-
-populateSedesSelect();
+ 
+cohor.addEventListener('change')
