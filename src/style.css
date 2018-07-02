@@ -10,11 +10,7 @@ header{
 }
 
 
-body{
-    background-image:  url(../images/woman_tech.jpg);
-    background-repeat:no-repeat;
-    
-} 
+
 
 .image {
     float: left;  
@@ -55,17 +51,5 @@ button{
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-<<<<<<< HEAD
-   background:#FFE50E;
-  
-   
-}
-
-
-/*
-#969FAA;
-
-=======
  
 }
->>>>>>> 23663b7afefee0d53277ea1d3f9dc1e68a261f75
