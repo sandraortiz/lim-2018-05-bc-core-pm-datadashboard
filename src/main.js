@@ -1,51 +1,90 @@
-const buttonWelcome = document.getElementById("buttonhome");
-const laboratoriapage=document.getElementById("start");
-const welcomePage=document.getElementById("welcomepage");
-const buttonpreadmisio=document.getElementById("students")
-const studentsPge=document.getElementById("studentspage")
-buttonWelcome.addEventListener('click', ()=>{
-    laboratoriapage.style.display="block";
-    welcomePage.style.display="none";
+const welcomePage = document.getElementById('welcome-page');
+const buttonHome = document.getElementById('button-home');
+const menuPage = document.getElementById('menu-page');
+const cohortsPage = document.getElementById('cohorts-page');
+const buttonCohorts =document.getElementById('button-cohorts');
+const head = document.getElementById('head')
+buttonHome.addEventListener('click',() => {
+  menuPage.style.display='block';
+  welcomePage.style.display='none';
+  head.style.display='block';
+  document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
+  document.body.style.backgroundImage = 'none';
 })
-buttonpreadmisio.addEventListener('click',()=>{
-    studentsPge.style.display="block";
-    laboratoriapage.style.display="none";
+buttonCohorts.addEventListener('click',()=>{
+  menuPage.style.display='none';
+  cohortsPage.style.display='block';
 })
-const select = document.getElementById('cohort');
-const students = document.getElementById('user');
-
-
-
-
-fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
-.then(function(response) {
-  if(response.ok) {
-    response.json()
-.then(function(json) {
-      user = json;
-      cohorts();
-    });
-  } else {
-    console.log('error');
+const datafile1 = '../data/cohorts.json'
+const datafile2 = '../data/cohorts/lim-2018-03-pre-core-pw/users.json'
+const datafile3 = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json'
+const llamadas = [];
+let cohorts = [];
+let progress = [];
+let users = [];
+llamadas.push(fetch(datafile1));
+llamadas.push(fetch(datafile2));
+llamadas.push(fetch(datafile3));
+Promise.all(llamadas)
+.then(
+  response =>Promise.all(
+    response.map(
+      data => data.text()
+    )
+  )
+ )
+.then(
+  response => {
+    cohorts= JSON.parse(response[0])
+    users  = JSON.parse(response[1])
+    progress = JSON.parse(response[2])
+    SelectSedesCohorts();
   }
-});
-const cohorts = () => {
-  for (let i = 0; i < user.length; i++) {
-    const options = document.createElement('option');
-    const contentoption = document.createTextNode(user[i].name);
-   options.appendChild(contentoption);
-   console.log(user[i].id);
-     select.appendChild(options);
-     }
-const resul = resuls [i];
-     if(resul.id=== "00hJv4mzvqM3D9kBy3dfxoJyFV82") {
-       return resul;
-      }
+   );
+const countriesSelect = document.getElementById("countries");
+const cohortsSelect = document.getElementById("cohorts-select");
+const SelectSedesCohorts = () => {
+ const sedes = [];
+  cohorts.forEach(cohort => {
+   const sedename = (cohort.id).split('-',1)[0];
+    if (sedes.indexOf(sedename) < 0) {
+      sedes.push(sedename);
+    } 
+  });
+  sedes.forEach(sedename => {
+    const optionSede = document.createElement('OPTION');
+    optionSede.innerHTML = sedename;
+    let countriesattr = document.createAttribute("value");
+    countriesattr.value = sedename; 
+   optionSede.setAttributeNode(countriesattr);
+   countries.appendChild(optionSede);
+  });
+ }
+ countriesSelect.addEventListener('change',(evt) => {
+   cohortsSelect.innerHTML="";
+   const selectcohortpreadmision = cohorts.forEach( cohort=>{
+   if  ( ( (cohort.id).split('-',1) == evt.target.value ) && ((cohort.id).split('-',4)[3] === 'pre'))
+   {
+   cohortsSelect.innerHTML += "<option value=\"" + cohort.id +"\">" + cohort.id + "</option>";
+   }
+   });
 
-
-
-}
-
-
-
-  
+  });
+ 
+  cohortsSelect.addEventListener('change',(evt) => {
+    let options = {
+      cohort: {},
+      cohortData: {
+          users: {},
+          progress: {}
+      },
+      orderBy: '',
+      orderDirection: '',
+      search: ''
+  };
+  let userWithStats =  processCohortData(options);
+  userWithStats.forEach(user=>{
+    tabla.innerHTML += '<tr><td>' + user.name + '</td><td>' + user.stats.percent + '</td></tr>';
+  })
+  });
+  const tabla = document.getElementById("tabla");
