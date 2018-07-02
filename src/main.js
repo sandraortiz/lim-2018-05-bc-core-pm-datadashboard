@@ -3,9 +3,7 @@ const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const cohortsPage = document.getElementById('cohorts-page');
 const buttonCohorts =document.getElementById('button-cohorts');
-const students = document.getElementById('countries');
 const head = document.getElementById('head')
-const sedesSelect = document.getElementById('cohor');
 buttonHome.addEventListener('click',() => {
   menuPage.style.display='block';
   welcomePage.style.display='none';
@@ -38,20 +36,55 @@ Promise.all(llamadas)
 .then(
   response => {
     cohorts= JSON.parse(response[0])
-   users  = JSON.parse(response[1])
+    users  = JSON.parse(response[1])
     progress = JSON.parse(response[2])
-sedespo();
+    SelectSedesCohorts();
   }
    );
-                
-const sedespo = () => {
-for (let i = 0; i < cohorts.length; i++) {
-    const options = document.createElement('option');
-    const contentoption = document.createTextNode(cohorts[i].id);
-   options.appendChild(contentoption);
-   console.log(cohorts[i].id);
-     cohor.appendChild(options);
-     } 
-}
+const countriesSelect = document.getElementById("countries");
+const cohortsSelect = document.getElementById("cohorts-select");
+const SelectSedesCohorts = () => {
+ const sedes = [];
+  cohorts.forEach(cohort => {
+   const sedename = (cohort.id).split('-',1)[0];
+    if (sedes.indexOf(sedename) < 0) {
+      sedes.push(sedename);
+    } 
+  });
+  sedes.forEach(sedename => {
+    const optionSede = document.createElement('OPTION');
+    optionSede.innerHTML = sedename;
+    let countriesattr = document.createAttribute("value");
+    countriesattr.value = sedename; 
+   optionSede.setAttributeNode(countriesattr);
+   countries.appendChild(optionSede);
+  });
+ }
+ countriesSelect.addEventListener('change',(evt) => {
+   cohortsSelect.innerHTML="";
+   const selectcohortpreadmision = cohorts.forEach( cohort=>{
+   if  ( ( (cohort.id).split('-',1) == evt.target.value ) && ((cohort.id).split('-',4)[3] === 'pre'))
+   {
+   cohortsSelect.innerHTML += "<option value=\"" + cohort.id +"\">" + cohort.id + "</option>";
+   }
+   });
+
+  });
  
-cohor.addEventListener('change')
+  cohortsSelect.addEventListener('change',(evt) => {
+    let options = {
+      cohort: {},
+      cohortData: {
+          users: {},
+          progress: {}
+      },
+      orderBy: '',
+      orderDirection: '',
+      search: ''
+  };
+  let userWithStats =  processCohortData(options);
+  userWithStats.forEach(user=>{
+    tabla.innerHTML += '<tr><td>' + user.name + '</td><td>' + user.stats.percent + '</td></tr>';
+  })
+  });
+  const tabla = document.getElementById("tabla");
