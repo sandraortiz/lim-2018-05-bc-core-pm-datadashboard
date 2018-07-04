@@ -39,6 +39,7 @@ Promise.all(llamadas)
     users  = JSON.parse(response[1])
     progress = JSON.parse(response[2])
     SelectSedesCohorts();
+    computeUserStats(users,progress)
     
   }
    );
@@ -71,15 +72,7 @@ const SelectSedesCohorts = () => {
    });
   });
   cohortsSelect.addEventListener('change',(evt) => {
-     let students = users ;
-     for (let i = 0; i < users.length; i++) {
-      const options = document.createElement('option');
-      const contentoption = document.createTextNode(users[i].name);
-     options.appendChild(contentoption);
-     console.log(users[i].name);
-       tabla.appendChild(options);
-      
-    }
+     if
 
   
   });
