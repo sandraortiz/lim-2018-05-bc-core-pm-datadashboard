@@ -39,6 +39,7 @@ Promise.all(llamadas)
     users  = JSON.parse(response[1])
     progress = JSON.parse(response[2])
     SelectSedesCohorts();
+    
   }
    );
 const countriesSelect = document.getElementById("countries");
@@ -63,28 +64,23 @@ const SelectSedesCohorts = () => {
  countriesSelect.addEventListener('change',(evt) => {
    cohortsSelect.innerHTML="";
    const selectcohortpreadmision = cohorts.forEach( cohort=>{
-   if  ( ( (cohort.id).split('-',1) == evt.target.value ) && ((cohort.id).split('-',4)[3] === 'pre'))
+   if  (  (cohort.id).split('-',1) == evt.target.value )
    {
    cohortsSelect.innerHTML += "<option value=\"" + cohort.id +"\">" + cohort.id + "</option>";
    }
    });
-
   });
- 
   cohortsSelect.addEventListener('change',(evt) => {
-    let options = {
-      cohort: {},
-      cohortData: {
-          users: {},
-          progress: {}
-      },
-      orderBy: '',
-      orderDirection: '',
-      search: ''
-  };
-  let userWithStats =  processCohortData(options);
-  userWithStats.forEach(user=>{
-    tabla.innerHTML += '<tr><td>' + user.name + '</td><td>' + user.stats.percent + '</td></tr>';
-  })
+     let students = users ;
+     for (let i = 0; i < users.length; i++) {
+      const options = document.createElement('option');
+      const contentoption = document.createTextNode(users[i].name);
+     options.appendChild(contentoption);
+     console.log(users[i].name);
+       tabla.appendChild(options);
+      
+    }
+
+  
   });
   const tabla = document.getElementById("tabla");

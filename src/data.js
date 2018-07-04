@@ -17,11 +17,7 @@ window.computeUsersStats = (users,progress,courses)=>{
         percent:0
          }
      }
-     users[0].stats=stats;
-     users[1].stats=stats;
-     users[2].stats=stats;
-     return [usersWithStats];
-
+    return 
 }
 
 window.sortUsers =(users,ordeBy,orderDirection) =>{
@@ -36,6 +32,5 @@ window.processCohortData=(options)=>{
     let progress= options.cohortData.progress;
     let usersWithStats = computeUsersStats( users,progress,courses );
     let sortUsersWithStats = sortUsers(usersWithStats, '','');
-  
-     return sortUsersWithStats;
+    return sortUsersWithStats;
 }

@@ -10,7 +10,10 @@ header{
 }
 
 
-
+body{
+    background-image:  url(../images/woman_tech.jpg);
+    background-repeat:no-repeat;   
+}  
 
 .image {
     float: left;  
