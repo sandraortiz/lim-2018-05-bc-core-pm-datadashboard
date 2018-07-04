@@ -8,8 +8,6 @@ header{
    -o-transition: all 200ms ease;
    transition: all 200ms ease;
 }
-
-
 body{
     background-image: url("../Images/woman_tech.jpg") ; 
     background-size: cover;
