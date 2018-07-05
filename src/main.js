@@ -84,18 +84,28 @@ const SelectSedesCohorts = () => {
       let usersWithStats = processCohortData(options);
        let template = '';
       console.log(usersWithStats);
+     
+        template += 
+        // `<ul>
+        // <li>${ele.name}</li>
+        // <li>${ele.stats.exercises.total}</li>
+        // <li>${ele.stats.exercises.completed}</li
+        // <li>${ele.stats.exercises.percent}</li>
+        // </ul>`  `` 
+        '<tr>'+
+          '<th>Nombre</th>'+
+          '<th>Ejercicios</th>'+
+          '<th>lecturas</th>'+    
+          '<th>Quizes</th>'+
+          '<th>Total</th>'
+          '</tr>'
       usersWithStats.forEach(ele => {
-        console.log(ele)
-        console.log(ele.name);
-        console.log(ele.stats.exercises.total);
-        console.log(ele.stats.exercises.completed);
-        console.log(ele.stats.exercises.percent);
-        template += `<ul>
-        <li>${ele.name}</li>
-        <li>${ele.stats.exercises.total}</li>
-        <li>${ele.stats.exercises.completed}</li
-        <li>${ele.stats.exercises.percent}</li>
-        </ul>`
+      template += '<tr>';
+      template += `<td>${ele.name}</td>`  
+      template += `<td>${ele.stats.exercises.percent}</td>`
+      template += `<td>${ele.stats.reads.percent}</td>`
+      template += `<td>${ele.stats.quizzes.percent}</td>`
+      template += `<td>${ele.stats.percent}</td>`
       })
       dataSection.innerHTML = template;
     }
