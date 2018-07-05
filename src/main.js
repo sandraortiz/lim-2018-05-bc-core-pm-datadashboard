@@ -3,14 +3,12 @@ const buttonHome = document.getElementById('button-home');
 const menuPage = document.getElementById('menu-page');
 const cohortsPage = document.getElementById('cohorts-page');
 const buttonCohorts = document.getElementById('button-cohorts');
-const head = document.getElementById('head');
 const countriesSelect = document.getElementById("countries");
 const cohortsSelect = document.getElementById("cohorts-select");
 const dataSection = document.getElementById('data');
 buttonHome.addEventListener('click', () => {
   menuPage.style.display = 'block';
   welcomePage.style.display = 'none';
-  head.style.display = 'block';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
   document.body.style.backgroundImage = 'none';
 })
@@ -84,7 +82,6 @@ const SelectSedesCohorts = () => {
       let usersWithStats = processCohortData(options);
        let template = '';
       console.log(usersWithStats);
-     
         template += 
         // `<ul>
         // <li>${ele.name}</li>
@@ -92,20 +89,16 @@ const SelectSedesCohorts = () => {
         // <li>${ele.stats.exercises.completed}</li
         // <li>${ele.stats.exercises.percent}</li>
         // </ul>`  `` 
-        '<tr>'+
+        '<br><tr>'+
           '<th>Nombre</th>'+
-          '<th>Ejercicios</th>'+
-          '<th>lecturas</th>'+    
-          '<th>Quizes</th>'+
-          '<th>Total</th>'
+          '<th>Ejercicios <br> completados</th> '+   
+          '<th>Porcentaje de <br> completitud</th>'
           '</tr>'
       usersWithStats.forEach(ele => {
       template += '<tr>';
-      template += `<td>${ele.name}</td>`  
+      template += `<td>${ele.name}</td>`
+      template += `<td>${ele.stats.exercises.completed}</td>`
       template += `<td>${ele.stats.exercises.percent}</td>`
-      template += `<td>${ele.stats.reads.percent}</td>`
-      template += `<td>${ele.stats.quizzes.percent}</td>`
-      template += `<td>${ele.stats.percent}</td>`
       })
       dataSection.innerHTML = template;
     }
@@ -115,4 +108,25 @@ const SelectSedesCohorts = () => {
   });
 
 }
+// let exTotal = 0;
+// let exCompleted = 0;
+// const units = userCourse.units;
+// Object.keys(units).forEach((unitName) => {
+//     const parts = units[unitName].parts;
+//     Object.keys(parts).forEach((partName) => {
+//         const exercises = parts[partName].exercises;
+//         exercises && Object.keys(exercises).forEach((exName) => {
+//             const ex = exercises[exName];
+//             exTotal = exTotal + 1;
+//             exCompleted = exCompleted + ex.completed;
+//         })
+//     })
+// })
+// user.stats = {
+//     exercises: {
+//         total: exTotal,
+//         completed: exCompleted,
+//         percent: exCompleted / exTotal * 100,
+//     }
+// }
 
