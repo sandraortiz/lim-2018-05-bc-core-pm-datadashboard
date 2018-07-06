@@ -77,21 +77,23 @@ const SelectSedesCohorts = () => {
         cohortData: {
           users: filterUsers,
           progress: progress
-        },
+          },
+          orderBy :'',
+          orderDirection : 'ASC',
+          search :''
+        
       }
       let usersWithStats = processCohortData(options);
        let template = '';
       console.log(usersWithStats);
+      template += '<br><tr>'+
+      '<th></th>'+
+      '<th>Ejercicios</th> '
+      '</tr>'
         template += 
-        // `<ul>
-        // <li>${ele.name}</li>
-        // <li>${ele.stats.exercises.total}</li>
-        // <li>${ele.stats.exercises.completed}</li
-        // <li>${ele.stats.exercises.percent}</li>
-        // </ul>`  `` 
         '<br><tr>'+
           '<th>Nombre</th>'+
-          '<th>Ejercicios <br> completados</th> '+   
+          '<th>completados</th> '+   
           '<th>Porcentaje de <br> completitud</th>'
           '</tr>'
       usersWithStats.forEach(ele => {
@@ -99,34 +101,15 @@ const SelectSedesCohorts = () => {
       template += `<td>${ele.name}</td>`
       template += `<td>${ele.stats.exercises.completed}</td>`
       template += `<td>${ele.stats.exercises.percent}</td>`
+      
       })
       dataSection.innerHTML = template;
     }
     else {
-      const otherscohorts = alert("no hay datos");
+      alert("no hay datos");
     }
   });
 
 }
-// let exTotal = 0;
-// let exCompleted = 0;
-// const units = userCourse.units;
-// Object.keys(units).forEach((unitName) => {
-//     const parts = units[unitName].parts;
-//     Object.keys(parts).forEach((partName) => {
-//         const exercises = parts[partName].exercises;
-//         exercises && Object.keys(exercises).forEach((exName) => {
-//             const ex = exercises[exName];
-//             exTotal = exTotal + 1;
-//             exCompleted = exCompleted + ex.completed;
-//         })
-//     })
-// })
-// user.stats = {
-//     exercises: {
-//         total: exTotal,
-//         completed: exCompleted,
-//         percent: exCompleted / exTotal * 100,
-//     }
-// }
+
 
