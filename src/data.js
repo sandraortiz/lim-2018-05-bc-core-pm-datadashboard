@@ -26,8 +26,8 @@ window.computeUsersStats = (users, progress, courses) => {
         if (userCourse) {
             let exercisesTotal = 0;
             let exercisesCompleted = 0;
-            let quiTotal = 0 ;
-            let quiCompleted = 0 ;
+            let quizzesTotal = 0 ;
+            let quizzesCompleted = 0 ;
             const units = userCourse.units;
             Object.keys(units).forEach((unitName) => {
                 const parts = units[unitName].parts;
@@ -37,21 +37,21 @@ window.computeUsersStats = (users, progress, courses) => {
                         const ex = exercises[exName];
                         exercisesTotal = exercisesTotal + 1;
                         exercisesCompleted = exercisesCompleted + ex.completed;
-                    })
-                    const quiz = parts[partName];
-                    const hola = quiz['completed'];
-                    console.log (hola);
-                        quiTotal = quiTotal + 1;
-                        quiCompleted = quiCompleted + qui.completed;
-                          
+                    }) ;
+                    const quiz = parts[partName].quiz;
+                   quiz && Object.keys(quiz).forEach((quiName ) => {
+                        const qui = quiz[quiz === "quiz"];
+                      quizzesTotal = quizzesTotal + 1;
+                      quizzesCompleted = quizzesCompleted + qui.completed;
+                    })     
                 })
             })
             stats.exercises.completed = exercisesCompleted;
             stats.exercises.percent =(exercisesCompleted / exercisesTotal)  * 100;
             stats.exercises.total = exercisesTotal;
-            stats.quizzes.completed = quiCompleted;
-            stats.quizzes.percent = quiCompleted / quiTotal * 100;
-            stats.quizzes.total = quiTotal;
+            stats.quizzes.completed = quizzesCompleted;
+            stats.quizzes.percent = quizzesCompleted / quizzesTotal * 100;
+            stats.quizzes.total = quizzesTotal;
           
         }
         user.stats = stats;
