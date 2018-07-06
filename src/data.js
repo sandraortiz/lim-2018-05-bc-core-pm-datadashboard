@@ -21,7 +21,7 @@ window.computeUsersStats = (users, progress, courses) => {
                 percent: 0
             }
         }
-        const courses= progress[user.id];
+        const courses= progress[user.id]; //El objeto progreso del usuario
         const userCourse = courses[courseName];
         if (userCourse) {
             let exercisesTotal = 0;
@@ -29,6 +29,9 @@ window.computeUsersStats = (users, progress, courses) => {
             let quizzesTotal = 0 ;
             let quizzesCompleted = 0 ;
             const units = userCourse.units;
+           console.log(Object.values(units));
+           Object.values(units).forEach
+           
             Object.keys(units).forEach((unitName) => {
                 const parts = units[unitName].parts;
                 Object.keys(parts).forEach((partName) => {
@@ -37,13 +40,13 @@ window.computeUsersStats = (users, progress, courses) => {
                         const ex = exercises[exName];
                         exercisesTotal = exercisesTotal + 1;
                         exercisesCompleted = exercisesCompleted + ex.completed;
-                    }) ;
-                    const quiz = parts[partName].quiz;
-                   quiz && Object.keys(quiz).forEach((quiName ) => {
-                        const qui = quiz[quiz === "quiz"];
-                      quizzesTotal = quizzesTotal + 1;
-                      quizzesCompleted = quizzesCompleted + qui.completed;
-                    })     
+                    }) 
+                    const quizzes = parts[partName].quizzes;
+                    quizzes && Object.keys(quizzes).forEach((exName) => {
+                        const qui = quizzes[exName];
+                        quizzesTotal = quizzesTotal + 1;
+                        quizzesCompleted = quizzesCompleted + qui.completed;
+                    }) 
                 })
             })
             stats.exercises.completed = exercisesCompleted;
@@ -52,17 +55,14 @@ window.computeUsersStats = (users, progress, courses) => {
             stats.quizzes.completed = quizzesCompleted;
             stats.quizzes.percent = quizzesCompleted / quizzesTotal * 100;
             stats.quizzes.total = quizzesTotal;
-          
         }
         user.stats = stats;
-
     });
     return usersWithStats;
 }
 window.sortUsers = (users, ordeBy, orderDirection) => {
 }
 window.filterUsers = (users, search) => {
-
 }
 window.processCohortData = (options) => {
     let computedUsers = computeUsersStats(options.cohortData.users, options.cohortData.progress, Object.keys(options.cohort.coursesIndex));
