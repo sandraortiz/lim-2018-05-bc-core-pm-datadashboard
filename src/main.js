@@ -93,7 +93,6 @@ const SelectSedesCohorts = () => {
         '<th>% de ejercicios</th>' +
         '<th>quizzes completados</th>' +
         '<th>% de quizzes</th>' +
-        '<th>score quizzes </th>' +
         '<th>lecturas completadas</th>' +
         '<th>% de lecturas</th>'
       '</tr>'
@@ -105,7 +104,6 @@ const SelectSedesCohorts = () => {
         template += `<td>${ele.stats.exercises.percent}</td>`
         template += `<td>${ele.stats.quizzes.completed}</td>`
         template += `<td>${ele.stats.quizzes.percent}</td>`
-        template += `<td>${ele.stats.quizzes.scoreAvg}</td>`
         template += `<td>${ele.stats.reads.completed}</td>`
         template += `<td>${ele.stats.reads.percent}</td>`
       })
@@ -122,7 +120,6 @@ const SelectSedesCohorts = () => {
         '<th>% de ejercicios</th>' +
         '<th>quizzes completados</th>' +
         '<th>% de quizzes</th>' +
-        '<th>score quizzes </th>' +
         '<th>lecturas completadas</th>' +
         '<th>% de lecturas</th>'
       '</tr>'
@@ -135,7 +132,6 @@ const SelectSedesCohorts = () => {
             template += `<td>${ele.stats.exercises.percent}</td>`
             template += `<td>${ele.stats.quizzes.completed}</td>`
             template += `<td>${ele.stats.quizzes.percent}</td>`
-            template += `<td>${ele.stats.quizzes.scoreAvg}</td>`
             template += `<td>${ele.stats.reads.completed}</td>`
             template += `<td>${ele.stats.reads.percent}</td>`
           }
@@ -158,7 +154,6 @@ const SelectSedesCohorts = () => {
           '<th>% de ejercicios</th>' +
           '<th>quizzes completados</th>' +
           '<th>% de quizzes</th>' +
-          '<th>score quizzes </th>' +
           '<th>lecturas completadas</th>' +
           '<th>% de lecturas</th>'
         '</tr>'
@@ -171,7 +166,6 @@ const SelectSedesCohorts = () => {
             template += `<td>${ele.stats.exercises.percent}</td>`
             template += `<td>${ele.stats.quizzes.completed}</td>`
             template += `<td>${ele.stats.quizzes.percent}</td>`
-            template += `<td>${ele.stats.quizzes.scoreAvg}</td>`
             template += `<td>${ele.stats.reads.completed}</td>`
             template += `<td>${ele.stats.reads.percent}</td>`
             }
