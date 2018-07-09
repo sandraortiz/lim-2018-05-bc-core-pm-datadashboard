@@ -29,7 +29,7 @@ estudiante en su proceso de aprendizaje.
 ## Encuesta
 
 Decidimos comenzar realizando una encuesta a las Training Managers, para obtener la información necesaria sobre sus necesidades a la hora de ver el historial de una alumna.
-(https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2)
+ [Encuesta](https://goo.gl/forms/bQ4w2lrQ72nYa6FQ2)
 
 Usuario 1
 
@@ -73,12 +73,13 @@ Cada una de estas opciones a su vez tendrían filtros como: sede, generación y 
 
 ## Prototipo
 
-Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño (https://marvelapp.com/)
+Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la plataforma de diseño 
+ [Marvel app](https://marvelapp.com/)
 
 ![1](documentacion/prototipoimagenes/1.png)
 
 
-(https://marvelapp.com/dd994i9)
+ [Prototipo](https://marvelapp.com/dd994i9)
 
 ## Elaborado por:
 
