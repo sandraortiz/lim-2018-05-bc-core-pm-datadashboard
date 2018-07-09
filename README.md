@@ -83,6 +83,6 @@ Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la pla
 
 ## Elaborado por:
 
-Sandra Ortiz y Evelyn Meniz
+Sandra Ortiz y Evelyn Meniz .
 
 
