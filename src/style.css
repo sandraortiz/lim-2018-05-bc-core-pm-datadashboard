@@ -8,6 +8,7 @@ header{
    -o-transition: all 200ms ease;
    transition: all 200ms ease;
 }
+
 body{
     background-image: url("../Images/woman_tech.jpg") ; 
     background-size: cover;
@@ -16,6 +17,21 @@ body{
     background-attachment: fixed;
 }  
 
+#data {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+}
+#datas td, #data th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#data th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:#313533 ;
+    color: white;
+}
 .image {
     float: left;  
     padding: 10px;
@@ -35,15 +51,7 @@ h1{
     max-width: 960px;
     position: absolute;
     top: 200;
-    left: 70;
-  
-}
-#head {
-    display: none;
-}
-#menu-page{
-   display: none;
-   
+    left: 70; 
 }
 #cohorts-page{
     display: none;
