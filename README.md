@@ -66,7 +66,7 @@ Concluimos que las usuarias (TMs), necesitaban una interfaz que les permita ver 
 Cada una de estas opciones a su vez tendrían filtros como: sede, generación y orden alfabetico, que permitirían una busqueda más eficaz con respecto al progreso de una alumna.
 
 
-## Diagrama de flujo 
+## Diagrama de flujo
 
 ![diagramadeflujo](documentacion/Diagramadeflujo/diagramadeflujo.png)
 
