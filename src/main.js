@@ -9,8 +9,9 @@ const nombreUsuarios = document.getElementById('nombre')
 const searchaa = document.getElementById("busqueda");
 const orderByu = document.getElementById("orderBy");
 const orderDirectionu= document.getElementById("orderDirection")
+const selectSede = document.getElementById('selectsede');
+const selectCohort = document.getElementById('selectcohort');
 buttonHome.addEventListener('click', () => {
-
   welcomePage.style.display = 'none';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
   document.body.style.backgroundImage = 'none';
@@ -69,6 +70,8 @@ const SelectSedesCohorts = () => {
   cohortsSelect.addEventListener('change', (evt) => {
     let value = evt.target.value
     if (value == "lim-2018-03-pre-core-pw") {
+      selectSede.style.display='none';
+      selectCohort.style.display='none';
       countriesSelect.style.display="none";
       cohortsSelect.style.display = "none";
       let filterUsers = users.filter(user => (user.role == 'student'));
