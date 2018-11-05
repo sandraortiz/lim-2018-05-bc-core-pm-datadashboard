@@ -78,3 +78,6 @@ button{
     display: inline-block;
 }
 
+#menu{
+    display: none
+}

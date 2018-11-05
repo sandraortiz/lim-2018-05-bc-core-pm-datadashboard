@@ -7,44 +7,102 @@
   <title>Data Dashboard</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css?family=Varela Round" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
 </head>
 
 <body>
-  <div id="welcome-page">
-    <h1>Laboratoria Progress</h1>
-    <br><br><br>
-    <button type="button" id="button-home">INGRESAR</button>
-  </div>
- 
-  <div id="cohorts-page">
-  <h2>Laboratoria Progress</h2>
-    <p id="selectsede">Escoga una sede</p>
-    <select name="" id="countries">
-    </select>
-    <p id="selectcohort">Escoga un cohort</p>
-    <select name="" id="cohorts-select">
-    </select>
-    <br>
-    <br>
-    <input type="text" id="busqueda" placeholder="Search..">
-    <select name="" id="orderBy">
-      <option value="orderByoption">ordernar por</option>
-      <option value="name">nombre</option>
-      <option value="percent">porcentaje total</option>
-      <option value="completedexercises"> ejercicicio completados</option>
-      <option value="completedquizzes">quizzes completados</option>
-      <option value="scorequizzes">puntaje quizzes</option>
-      <option value="completedreads"> lecturas completados</option>
-    </select>
-    <select name="" id="orderDirection">
-      <option>ordernar por</option>
-      <option value="ASC">Ascendente</option>
-      <option value="DESC">Descendente</option>
-    </select>
-    <table id="data">
-    </table>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="welcome-page">
+          <h1 class="text-white" >Laboratoria Progress</h1>
+          <br><br><br>
+          <!-- <button type="button" id="button-home">INGRESAR</button> -->
+          <button type="button" class="btn btn-light" id="button-home">INGRESAR</button>
 
+        </div>
+
+        <div id="cohorts-page">
+          <h2 >  Laboratoria Progress</h2>
+          <p id="selectsede">Escoga una sede</p>
+          <select class="custom-select "  id="countries">
+
+              <option value="Sede"> sede</option>
+
+            </select>
+          <!-- <select name="" id="countries">
+            <option value="Sede"> sede</option>
+          </select> -->
+          <p id="selectcohort">Escoga un cohort</p>
+          <!-- <select name="" id="cohorts-select">
+    </select> -->
+
+          <div class="btn-toolbar" role="toolbar" id="cohorts-select" aria-label="Toolbar with button groups"></div>
+          <br>
+          <br>
+          <div id="menu">
+            <input class="form-control mr-sm-2" id="busqueda" type="search" placeholder="Search" aria-label="Search">
+            <br>
+            <!-- <input type="text" id="busqueda" placeholder="Search.."> -->
+            <div class="container">
+              <div class="row">
+
+              <select class="custom-select col-4" id="orderBy">
+                <option value="orderByoption">ordernar por</option>
+                <option value="name">nombre</option>
+                <option value="percent">porcentaje total</option>
+                <option value="completedexercises"> ejercicicio completados</option>
+                <option value="completedquizzes">quizzes completados</option>
+                <option value="scorequizzes">puntaje quizzes</option>
+                <option value="completedreads"> lecturas completados</option>
+              </select>
+              <br>
+              <select class="custom-select col-4 " id="orderDirection">
+
+                <option>orden</option>
+                <option value="ASC">Ascendente</option>
+                <option value="DESC">Descendente</option>
+              </select>
+
+            </div>
+            </div>
+            
+
+            <!-- <select name="" id="orderBy">
+            <option value="orderByoption">ordernar por</option>
+            <option value="name">nombre</option>
+            <option value="percent">porcentaje total</option>
+            <option value="completedexercises"> ejercicicio completados</option>
+            <option value="completedquizzes">quizzes completados</option>
+            <option value="scorequizzes">puntaje quizzes</option>
+            <option value="completedreads"> lecturas completados</option>
+          </select> -->
+            <!-- <select name="" id="orderDirection">
+            <option>ordernar por</option>
+            <option value="ASC">Ascendente</option>
+            <option value="DESC">Descendente</option>
+          </select> -->
+          </div>
+          <!-- <div class="table-responsive">
+              <table class="table" id="data" >
+                
+              </table>
+            </div> -->
+          <table id="data">
+          </table>
+
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>

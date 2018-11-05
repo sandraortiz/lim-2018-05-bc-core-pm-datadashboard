@@ -8,9 +8,11 @@ const dataSection = document.getElementById('data');
 const nombreUsuarios = document.getElementById('nombre')
 const searchaa = document.getElementById("busqueda");
 const orderByu = document.getElementById("orderBy");
-const orderDirectionu= document.getElementById("orderDirection")
+const orderDirectionu = document.getElementById("orderDirection")
 const selectSede = document.getElementById('selectsede');
 const selectCohort = document.getElementById('selectcohort');
+const menui = document.getElementById('menu');
+
 buttonHome.addEventListener('click', () => {
   welcomePage.style.display = 'none';
   document.body.style.backgroundColor = 'rgba(150, 159, 170, 0.28)';
@@ -52,27 +54,66 @@ const SelectSedesCohorts = () => {
     }
   });
   sedes.forEach(sedename => {
-    const optionSede = document.createElement('OPTION');
-    optionSede.innerHTML = sedename;
-    let countriesattr = document.createAttribute("value");
-    countriesattr.value = sedename;
-    optionSede.setAttributeNode(countriesattr);
-    countries.appendChild(optionSede);
+    if (sedename !== "lim") {
+      let countriesattrx = document.createAttribute("disabled");
+      const optionSede = document.createElement('OPTION');
+      optionSede.innerHTML = sedename;
+      let countriesattr = document.createAttribute("value");
+      countriesattr.value = sedename;
+      optionSede.setAttributeNode(countriesattrx);
+      optionSede.setAttributeNode(countriesattr);
+      countries.appendChild(optionSede);
+    } else {
+      const optionSede = document.createElement('OPTION');
+      optionSede.innerHTML = sedename;
+      let countriesattr = document.createAttribute("value");
+      countriesattr.value = sedename;
+      optionSede.setAttributeNode(countriesattr);
+      countries.appendChild(optionSede);
+    }
   });
   countriesSelect.addEventListener('change', (evt) => {
     cohortsSelect.innerHTML = "";
     cohorts.forEach(cohort => {
       if ((cohort.id).split('-', 1) == evt.target.value) {
-        cohortsSelect.innerHTML += "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
+        if (cohort.id !== "lim-2018-03-pre-core-pw") {
+          cohortsSelect.innerHTML +=
+          //  "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
+          `          
+
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" value="${cohort.id}" class="btn btn-secondary disabled">${cohort.id}</button>
+       </div>
+       `
+        } else {
+          cohortsSelect.innerHTML +=
+          //  "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
+          `          
+
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+          <button type="button" value="${cohort.id}" class="btn btn-secondary ">${cohort.id}</button>
+       </div>
+       `
+
+        }
+      //   cohortsSelect.innerHTML +=
+      //     //  "<option value=\"" + cohort.id + "\">" + cohort.id + "</option>";
+      //     `          
+
+      //   <div class="btn-group mr-2" role="group" aria-label="First group">
+      //     <button type="button" value="${cohort.id}" class="btn btn-secondary">${cohort.id}</button>
+      //  </div>
+      //  `
       }
     });
   });
-  cohortsSelect.addEventListener('change', (evt) => {
+  cohortsSelect.addEventListener('click', (evt) => {
     let value = evt.target.value
     if (value == "lim-2018-03-pre-core-pw") {
-      selectSede.style.display='none';
-      selectCohort.style.display='none';
-      countriesSelect.style.display="none";
+      menui.style.display = 'block'
+      selectSede.style.display = 'none';
+      selectCohort.style.display = 'none';
+      countriesSelect.style.display = "none";
       cohortsSelect.style.display = "none";
       let filterUsers = users.filter(user => (user.role == 'student'));
       let selectedCohort = cohorts.find(cohort => (cohort.id == value));
@@ -87,7 +128,7 @@ const SelectSedesCohorts = () => {
         search: ''
       }
       let usersWithStats = processCohortData(options);
-       let template = '';
+      let template = '';
       template +=
         '<br><tr>' +
         '<th>Nombre</th>' +
@@ -116,16 +157,16 @@ const SelectSedesCohorts = () => {
         let usersWithStats = processCohortData(options);
         let template = '';
         template +=
-        '<br><tr>' +
-        '<th>Nombre</th>' +
-        '<th>% total</th> ' +
-        '<th>ejercicios completados</th>' +
-        '<th>% de ejercicios</th>' +
-        '<th>quizzes completados</th>' +
-        '<th>% de quizzes</th>' +
-        '<th>lecturas completadas</th>' +
-        '<th>% de lecturas</th>'
-      '</tr>'
+          '<br><tr>' +
+          '<th>Nombre</th>' +
+          '<th>% total</th> ' +
+          '<th>ejercicios completados</th>' +
+          '<th>% de ejercicios</th>' +
+          '<th>quizzes completados</th>' +
+          '<th>% de quizzes</th>' +
+          '<th>lecturas completadas</th>' +
+          '<th>% de lecturas</th>'
+        '</tr>'
         usersWithStats.forEach(ele => {
           if (ele.stats) {
             template += '<tr>';
@@ -141,7 +182,6 @@ const SelectSedesCohorts = () => {
         })
         dataSection.innerHTML = template;
       })
-      
       orderByu.addEventListener('change', () => {
         orderDirectionu.addEventListener('change', () => {
           options.orderBy = orderByu.value;
@@ -150,39 +190,36 @@ const SelectSedesCohorts = () => {
           let template = '';
           console.log(usersWithStats);
           template +=
-          '<br><tr>' +
-          '<th>Nombre</th>' +
-          '<th>% total</th> ' +
-          '<th>ejercicios completados</th>' +
-          '<th>% de ejercicios</th>' +
-          '<th>quizzes completados</th>' +
-          '<th>% de quizzes</th>' +
-          '<th>lecturas completadas</th>' +
-          '<th>% de lecturas</th>'
-        '</tr>'
-        usersWithStats.forEach(ele => {
+            '<br><tr>' +
+            '<th>Nombre</th>' +
+            '<th>% total</th> ' +
+            '<th>ejercicios completados</th>' +
+            '<th>% de ejercicios</th>' +
+            '<th>quizzes completados</th>' +
+            '<th>% de quizzes</th>' +
+            '<th>lecturas completadas</th>' +
+            '<th>% de lecturas</th>'
+          '</tr>'
+          usersWithStats.forEach(ele => {
             if (ele.stats) {
               template += '<tr>';
-            template += `<td>${ele.name}</td>`
-            template += `<td>${ele.stats.percent}</td>`
-            template += `<td>${ele.stats.exercises.completed}</td>`
-            template += `<td>${ele.stats.exercises.percent}</td>`
-            template += `<td>${ele.stats.quizzes.completed}</td>`
-            template += `<td>${ele.stats.quizzes.percent}</td>`
-            template += `<td>${ele.stats.reads.completed}</td>`
-            template += `<td>${ele.stats.reads.percent}</td>`
+              template += `<td>${ele.name}</td>`
+              template += `<td>${ele.stats.percent}</td>`
+              template += `<td>${ele.stats.exercises.completed}</td>`
+              template += `<td>${ele.stats.exercises.percent}</td>`
+              template += `<td>${ele.stats.quizzes.completed}</td>`
+              template += `<td>${ele.stats.quizzes.percent}</td>`
+              template += `<td>${ele.stats.reads.completed}</td>`
+              template += `<td>${ele.stats.reads.percent}</td>`
             }
           })
           dataSection.innerHTML = template;
         })
 
       })
-    }
-    else {
+    } else {
       alert("no hay datos");
     }
   });
 
 }
-
-
