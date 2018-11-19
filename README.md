@@ -79,7 +79,7 @@ Una vez obtenido los sketchs finales, elaboramos muestro prototipo usando la pla
 ![1](documentacion/prototipoimagenes/1.png)
 
 
- [Prototipo](https://marvelapp.com/dd994i9)
+
 
 ## Elaborado por:
 
